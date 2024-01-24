@@ -650,15 +650,12 @@ h6 {
 }
 
 .main {
-  position: relative;
   padding: 40px 0 160px;
   text-align: center;
   background: url("../img/main.jpg") center/cover no-repeat;
 }
 
 .main__title {
-  position: relative;
-  z-index: 3;
   margin: 0 auto 40px;
   max-width: 900px;
   font-size: 50px;
@@ -669,8 +666,6 @@ h6 {
 }
 
 .main__button {
-  position: relative;
-  z-index: 3;
   width: 100%;
   max-width: 220px;
 }
@@ -1438,6 +1433,10 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
+}
+
+.product__info-image img {
+  max-width: 100%;
 }
 
 .product__info-button {
