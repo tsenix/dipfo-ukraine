@@ -756,6 +756,54 @@ h6 {
           flex: 0 0 100%;
 }
 
+.catalog__pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  margin-top: 55px;
+}
+
+.catalog__pagination-button {
+  padding: 12px 18px;
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 8px;
+  border: 1px solid #418BFB;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.catalog__pagination-button.action {
+  color: #fff;
+  background-color: #418BFB;
+}
+
+.catalog__pagination-button.step {
+  color: #418BFB;
+  background-color: #fff;
+}
+
+.catalog__pagination-button.disabled {
+  color: #ADADAD;
+  background-color: #D4D4D4;
+  border: 1px solid #D4D4D4;
+  cursor: auto;
+}
+
+.catalog__pagination-button.active {
+  background-color: #E9F0FB;
+  cursor: auto;
+}
+
+.catalog__pagination-button.desc {
+  display: none;
+}
+
 .item-catalog {
   position: relative;
   display: -webkit-box;
@@ -778,6 +826,10 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.item-catalog.active .item-catalog__item-context {
+  -webkit-line-clamp: 10;
 }
 
 .item-catalog.no-vip .item-catalog__vip {
@@ -907,6 +959,10 @@ h6 {
 .item-catalog__item-context {
   font-size: 16px;
   line-height: 120%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .item-catalog__item-context.link {
@@ -3054,6 +3110,30 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(33.333% - 14px);
             flex: 0 0 calc(33.333% - 14px);
+  }
+
+  .catalog__pagination-button.action:hover {
+    background-color: #000;
+    border: 1px solid #000;
+  }
+
+  .catalog__pagination-button.step:hover {
+    color: #fff;
+    background-color: #418BFB;
+  }
+
+  .catalog__pagination-button.disabled:hover {
+    background-color: #D4D4D4;
+    border: 1px solid #D4D4D4;
+  }
+
+  .catalog__pagination-button.active:hover {
+    color: #418BFB;
+    background-color: #E9F0FB;
+  }
+
+  .catalog__pagination-button.desc {
+    display: block;
   }
 
   .item-catalog__image:hover {
