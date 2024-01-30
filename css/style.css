@@ -756,7 +756,7 @@ h6 {
           flex: 0 0 100%;
 }
 
-.catalog__pagination {
+.pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -767,7 +767,8 @@ h6 {
   margin-top: 55px;
 }
 
-.catalog__pagination-button {
+.pagination .page-item {
+  display: block;
   padding: 12px 18px;
   font-size: 16px;
   line-height: 19px;
@@ -778,29 +779,29 @@ h6 {
   transition: all 0.5s ease;
 }
 
-.catalog__pagination-button.action {
+.pagination .page-item.action {
   color: #fff;
   background-color: #418BFB;
 }
 
-.catalog__pagination-button.step {
+.pagination .page-item.step {
   color: #418BFB;
   background-color: #fff;
 }
 
-.catalog__pagination-button.disabled {
+.pagination .page-item.action.disabled {
   color: #ADADAD;
   background-color: #D4D4D4;
   border: 1px solid #D4D4D4;
   cursor: auto;
 }
 
-.catalog__pagination-button.active {
+.pagination .page-item.active {
   background-color: #E9F0FB;
   cursor: auto;
 }
 
-.catalog__pagination-button.desc {
+.pagination .page-item.desc {
   display: none;
 }
 
@@ -952,11 +953,17 @@ h6 {
 }
 
 .item-catalog__item-icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
   width: 24px;
   height: 24px;
 }
 
 .item-catalog__item-context {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% - 30px);
+          flex: 0 0 calc(100% - 30px);
   font-size: 16px;
   line-height: 120%;
   display: -webkit-box;
@@ -3112,27 +3119,27 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
             flex: 0 0 calc(33.333% - 14px);
   }
 
-  .catalog__pagination-button.action:hover {
+  .pagination .page-item.action:hover {
     background-color: #000;
     border: 1px solid #000;
   }
 
-  .catalog__pagination-button.step:hover {
+  .pagination .page-item.step:hover {
     color: #fff;
     background-color: #418BFB;
   }
 
-  .catalog__pagination-button.disabled:hover {
+  .pagination .page-item.action.disabled:hover {
     background-color: #D4D4D4;
     border: 1px solid #D4D4D4;
   }
 
-  .catalog__pagination-button.active:hover {
+  .pagination .page-item.active:hover {
     color: #418BFB;
     background-color: #E9F0FB;
   }
 
-  .catalog__pagination-button.desc {
+  .pagination .page-item.desc {
     display: block;
   }
 
