@@ -4777,6 +4777,40 @@ PERFORMANCE OF THIS SOFTWARE.
         }
     }
     window.addEventListener("load", handleSizeListItem);
+    function initializeSizeItemContext() {
+        const items = document.querySelectorAll(".item-catalog__item");
+        const widthWindow = window.innerWidth;
+        let widthContainer;
+        if (widthWindow < 768) widthContainer = widthWindow - 72; else if (widthWindow < 992) widthContainer = (widthWindow - 40) / 2 - 42; else if (widthWindow < 1280) widthContainer = 960 / 3 - 46; else widthContainer = 1200 / 4 - 47;
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            const widthItem = item.offsetWidth;
+            if (widthItem > widthContainer) item.style.width = parseInt(widthContainer) + "px";
+        }
+    }
+    function handleSizeItemContext() {
+        const items = document.querySelectorAll(".item-catalog__item");
+        const widthWindow = window.innerWidth;
+        let widthContainer;
+        if (widthWindow < 768) widthContainer = widthWindow - 72; else if (widthWindow < 992) widthContainer = (widthWindow - 40) / 2 - 42; else if (widthWindow < 1280) widthContainer = 960 / 3 - 46; else widthContainer = 1200 / 4 - 47;
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            const widthItem = item.offsetWidth;
+            const parentWidth = item.parentElement.offsetWidth;
+            if (parentWidth > widthItem) item.style.width = parseInt(parentWidth) + "px"; else item.style.width = parseInt(widthContainer) + "px";
+        }
+    }
+    window.addEventListener("resize", handleSizeItemContext);
+    initializeSizeItemContext();
+    function initializeSectionStyle() {
+        const section = document.querySelector(".section");
+        if (section) {
+            const info = document.querySelector(".info");
+            const categories = document.querySelector(".categories");
+            if (!info) categories.classList.add("full");
+        }
+    }
+    window.addEventListener("load", initializeSectionStyle);
     window["FLS"] = true;
     menuInit();
 })();

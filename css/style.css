@@ -769,9 +769,6 @@ h6 {
 
 .pagination .page-item {
   display: block;
-  padding: 12px 18px;
-  font-size: 16px;
-  line-height: 19px;
   border-radius: 8px;
   border: 1px solid #418BFB;
   cursor: pointer;
@@ -805,6 +802,13 @@ h6 {
   display: none;
 }
 
+.pagination .page-link {
+  display: block;
+  padding: 12px 18px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
 .item-catalog {
   position: relative;
   display: -webkit-box;
@@ -830,7 +834,8 @@ h6 {
 }
 
 .item-catalog.active .item-catalog__item-context {
-  -webkit-line-clamp: 10;
+  overflow-y: visible;
+  white-space: wrap;
 }
 
 .item-catalog.no-vip .item-catalog__vip {
@@ -964,12 +969,13 @@ h6 {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(100% - 30px);
           flex: 0 0 calc(100% - 30px);
+  width: calc(100% - 30px);
   font-size: 16px;
   line-height: 120%;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .item-catalog__item-context.link {
@@ -1341,6 +1347,10 @@ h6 {
   border-radius: 50%;
 }
 
+.info img {
+  width: 100%;
+}
+
 .categories {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1350,6 +1360,12 @@ h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
+}
+
+.categories.full .categories__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(33.333% - 12px);
+          flex: 0 0 calc(33.333% - 12px);
 }
 
 .categories__item {
@@ -2797,6 +2813,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
             flex: 0 0 250px;
   }
 
+  .categories.full {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 18px;
+  }
+
   .product__info-title {
     margin-bottom: 20px;
     text-align: left;
@@ -3262,6 +3289,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-box-flex: 0;
         -ms-flex: 0 0 350px;
             flex: 0 0 350px;
+  }
+
+  .categories.full {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 18px;
   }
 
   .categories__item-link:hover {
